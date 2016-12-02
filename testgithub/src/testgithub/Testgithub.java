@@ -18,7 +18,7 @@ public class Testgithub {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        System.out.println("Hello pede");
+        System.out.println("Hello pede, test phat nua");
     }
     
 }
