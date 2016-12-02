@@ -17,6 +17,7 @@ public class Testgithub {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        system.out.printlt("Hello pede");
     }
     
 }
