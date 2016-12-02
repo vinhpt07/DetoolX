@@ -4,17 +4,22 @@
  * and open the template in the editor.
  */
 
-package de.detool;
+package detoolx;
 import de.detool.*;
 /**
  *
  * @author thanhvinh.phan
  */
-public class NewClass {
-       public static void main(String[] args) {
+public class DetoolX {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
         // TODO code application logic here
        DetoolXUI view = new DetoolXUI();
         // Start the application
         view.setVisible(true);
-    } 
+    }
+    
 }
