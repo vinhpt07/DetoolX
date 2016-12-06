@@ -13,3 +13,5 @@ hs_err_pid*
 /testgithub/nbproject/private/
 /testgithub/build/
 /nbproject/private/
+/build/
+/dist/

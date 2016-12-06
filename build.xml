@@ -70,4 +70,10 @@
     nbproject/build-impl.xml file. 
 
     -->
+    <target name="-post-jar">
+        <copy file="xml/HelloWorld.xml" todir="${dist.dir}/xml"/>        
+    </target>
+    <target name="-post-compile-single">
+        <copy file="xml/HelloWorld.xml" todir="${build.dir}/xml"/>        
+    </target>
 </project>

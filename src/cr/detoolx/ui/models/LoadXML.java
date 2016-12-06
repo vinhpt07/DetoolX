@@ -9,6 +9,7 @@ package cr.detoolx.ui.models;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URLDecoder;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
@@ -39,6 +40,7 @@ public class LoadXML {
     
     private String getRelativePath() throws IOException{
             String path = getClass().getProtectionDomain().getCodeSource().getLocation().getPath();
+            path = URLDecoder.decode(path, "UTF-8");
             path += "/.././xml/HelloWorld.xml";
             return new File(path).getCanonicalPath();
     }
