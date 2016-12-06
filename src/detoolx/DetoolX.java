@@ -5,7 +5,7 @@
  */
 
 package detoolx;
-import de.detool.*;
+import cr.detoolx.ui.controllers.*;
 /**
  *
  * @author thanhvinh.phan
@@ -17,9 +17,9 @@ public class DetoolX {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-       DetoolXUI view = new DetoolXUI();
+       LayoutController controller = new LayoutController();
         // Start the application
-        view.setVisible(true);
+        controller.startApplication();
     }
     
 }
