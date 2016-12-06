@@ -6,15 +6,13 @@
 
 package cr.detoolx.ui.views;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import cr.detoolx.ui.controllers.*;
-import cr.detoolx.ui.models.LoadXML;
-import java.io.FileInputStream;
-import java.io.InputStream;
 import org.swixml.SwingEngine;
 import org.w3c.dom.Document;
 
