@@ -8,6 +8,7 @@ package cr.detoolx.ui.models;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
@@ -22,10 +23,10 @@ public class LoadXML {
     public Document getXML() throws Exception{
         Document doc;
         try {
-            String is = ("C:/Documents and Settings/thanhvinh.phan/Desktop/HelloWorld.xml");
+            String path1 = getRelativePath();
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder db = dbf.newDocumentBuilder(); 
-            doc = db.parse(new File(is));
+            doc = db.parse(new File(path1));
             return doc;
              
         } catch (FileNotFoundException e) {
@@ -34,6 +35,12 @@ public class LoadXML {
         }
         return null;
 
+    }
+    
+    private String getRelativePath() throws IOException{
+            String path = getClass().getProtectionDomain().getCodeSource().getLocation().getPath();
+            path += "/.././xml/HelloWorld.xml";
+            return new File(path).getCanonicalPath();
     }
 
 }
