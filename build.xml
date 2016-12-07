@@ -73,7 +73,7 @@
     <target name="-post-jar">
         <copy file="xml/HelloWorld.xml" todir="${dist.dir}/xml"/>        
     </target>
-    <target name="-post-compile-single">
+    <target name="-post-compile">
         <copy file="xml/HelloWorld.xml" todir="${build.dir}/xml"/>        
     </target>
 </project>

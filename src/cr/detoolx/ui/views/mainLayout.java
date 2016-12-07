@@ -15,7 +15,7 @@ import javax.swing.JTextField;
 import cr.detoolx.ui.controllers.*;
 import org.swixml.SwingEngine;
 import org.w3c.dom.Document;
-
+import org.swixml.ConverterLibrary;
 /**
  *
  * @author thanhvinh.phan
@@ -45,13 +45,18 @@ public class mainLayout {
   /** Renders UI at construction
      * @throws java.lang.Exception */
   public mainLayout() throws Exception { 
- 
+     
+     SwingEngine newtag = new SwingEngine();
+     newtag.getTaglib().registerTag("xpanel", XPanel.class);
      Document doc =  controller.getGUI();
         
     new SwingEngine( this ).render(doc).setVisible( true );
   }
 
-
+  public static void main(String[] args) throws Exception{
+      new mainLayout();
+      
+  }
     
 
 }
