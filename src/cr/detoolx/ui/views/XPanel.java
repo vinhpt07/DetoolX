@@ -10,8 +10,10 @@ package cr.detoolx.ui.views;
  *
  * @author thanhvinh.phan
  */
+import cr.detoolx.ui.controllers.LayoutController;
 import java.awt.Container;
 import java.awt.Panel;
+import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -38,10 +40,27 @@ import org.w3c.dom.Document;
  * @since
  */
 
-public class XPanel extends Container {
+public class XPanel extends JPanel{
 
-  private SwingEngine swix = new SwingEngine( this );
+  private SwingEngine swix = new SwingEngine(this);
+  private int clicks;
+    
+  /** JTextField member gets instantiated through Swixml (look for id="tf" in xml descriptor) */
+  public JTextField tf;
 
+  /** Jlabel to display number of button clicks */
+  public JLabel cnt;
+  
+  
+
+  /** Action appends a '#' to the textfields content.  */
+  public Action submit = new AbstractAction() {
+    @Override
+    public void actionPerformed( ActionEvent e ) {
+      tf.setText( tf.getText() + '#' );
+      cnt.setText(String.valueOf( ++clicks ));
+    }
+  };
 
   public void setXml(String resource) {
     try {
@@ -51,8 +70,10 @@ public class XPanel extends Container {
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder db = dbf.newDocumentBuilder(); 
             Document doc = db.parse(new File(path).getCanonicalPath() + resource);
-            InputStream is = new FileInputStream("C:\\Documents and Settings\\thanhvinh.phan\\My Documents\\NetBeansProjects\\DetoolX\\build\\xml\\menu.xml");
-      swix.insert(doc, this );
+            //InputStream is = new FileInputStream("C:\\Documents and Settings\\thanhvinh.phan\\My Documents\\NetBeansProjects\\DetoolX\\build\\xml\\menu.xml");
+            swix.cleanup();
+            swix.insert(doc,this);
+            swix.getIdMap().clear();
 
     } catch (Exception e) {
       System.err.println( e.getMessage() );

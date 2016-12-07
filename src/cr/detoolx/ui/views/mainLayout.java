@@ -21,36 +21,21 @@ import org.swixml.ConverterLibrary;
  * @author thanhvinh.phan
  */
 
-public class mainLayout {
+public class mainLayout extends SwingEngine {
  
-  private int clicks;
-    
-  /** JTextField member gets instantiated through Swixml (look for id="tf" in xml descriptor) */
-  public JTextField tf;
 
-  /** Jlabel to display number of button clicks */
-  public JLabel cnt;
-  
-  private final LayoutController controller = new LayoutController();
-
-  /** Action appends a '#' to the textfields content.  */
-  public Action submit = new AbstractAction() {
-    @Override
-    public void actionPerformed( ActionEvent e ) {
-      tf.setText( tf.getText() + '#' );
-      cnt.setText(String.valueOf( ++clicks ));
-    }
-  };
-
+private final LayoutController controller = new LayoutController();
   /** Renders UI at construction
      * @throws java.lang.Exception */
   public mainLayout() throws Exception { 
      
-     SwingEngine newtag = new SwingEngine();
-     newtag.getTaglib().registerTag("xpanel", XPanel.class);
+     
+     this.getTaglib().registerTag("xpanel", XPanel.class);
+     
      Document doc =  controller.getGUI();
-        
-    new SwingEngine( this ).render(doc).setVisible( true );
+     render(doc).setVisible( true );
+
+     
   }
 
   public static void main(String[] args) throws Exception{
