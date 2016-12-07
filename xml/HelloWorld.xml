@@ -12,11 +12,19 @@ extendedState="JFrame.MAXIMIZED_BOTH"
 undecorated = "false"
 title="Hello SWIXML World" 
 defaultCloseOperation="JFrame.EXIT_ON_CLOSE">
-    <panel constraints="BorderLayout.CENTER">
-        <label labelfor="tf" font="Georgia-BOLD-12" foreground="blue" text="Hello World!"/>
-        <textfield id="tf" columns="20" Text="Swixml"/>
-        <button text="Click Here" action="submit"/>
-    </panel>
+    
+        <menubar>
+        <menu text="mus_Help">
+            <menuitem name="mi_help" text="mis_Help" icon="img_Help" Action="actionHelp" Accelerator="acc_Help"/>
+            <separator/>
+            <menuitem name="mi_about" text="mis_About" icon="img_About" Action="actionAbout" Accelerator="acc_About" macos_about="true"/>
+            <separator/>
+            <menuitem name="mi_exit" text="mis_Exit" icon="img_Exit" mnemonic="mn_Exit" Action="actionExit" Accelerator="acc_Exit" macos_quit="true"/>
+        </menu>
+</menubar>
+     
+    <xpanel xml="\menu.xml" background="black" constraints="BorderLayout.NORTH"/>
+
     <panel constraints="BorderLayout.SOUTH">
         <panel border="EmptyBorder(10,10,10,10)">
             <layout type="FormLayout" columns="right:max(40dlu;pref), 3dlu, d:grow, 7dlu, right:pref, 3dlu, d:grow" 
