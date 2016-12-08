@@ -71,9 +71,19 @@
 
     -->
     <target name="-post-jar">
-        <copy file="xml/HelloWorld.xml" todir="${dist.dir}/xml"/>        
+                <copy todir="${dist.dir}/xml">
+            <fileset dir="xml/">
+                <include name="**/**"/>
+            </fileset>
+        </copy>
     </target>
+    <target name="-post-compile-single" depends="-post-compile"/>
+
     <target name="-post-compile">
-        <copy file="xml/HelloWorld.xml" todir="${build.dir}/xml"/>        
+        <copy todir="${build.dir}/xml">
+            <fileset dir="xml/">
+                <include name="**/**"/>
+            </fileset>
+        </copy>
     </target>
 </project>

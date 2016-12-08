@@ -5,6 +5,7 @@
  */
 
 package cr.detoolx.ui.controllers;
+
 import cr.detoolx.ui.views.*;
 import cr.detoolx.ui.models.*;
 import java.util.logging.Level;
@@ -18,9 +19,9 @@ import org.w3c.dom.Document;
 public class LayoutController {
     
     public void startApplication(){
-        mainLayout view;
+        LayoutMain view;
         try {
-            view = new mainLayout();
+            view = new LayoutMain();
             
         } catch (Exception ex) {
             Logger.getLogger(LayoutController.class.getName()).log(Level.SEVERE, null, ex);
@@ -30,7 +31,7 @@ public class LayoutController {
     
     public Document getGUI(){
         try {
-            LoadXML xml = new LoadXML();
+            LayoutXML xml = new LayoutXML();
             return xml.getXML();
         } catch (Exception ex) {
             Logger.getLogger(LayoutController.class.getName()).log(Level.SEVERE, null, ex);

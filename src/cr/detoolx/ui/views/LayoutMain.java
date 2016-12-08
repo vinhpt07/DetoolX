@@ -6,6 +6,7 @@
 
 package cr.detoolx.ui.views;
 
+import cr.detoolx.ui.widget.XPanel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
@@ -15,32 +16,47 @@ import javax.swing.JTextField;
 import cr.detoolx.ui.controllers.*;
 import org.swixml.SwingEngine;
 import org.w3c.dom.Document;
-import org.swixml.ConverterLibrary;
 /**
  *
  * @author thanhvinh.phan
  */
 
-public class mainLayout extends SwingEngine {
+public class LayoutMain extends SwingEngine {
  
+  private int clicks;
+    
+  /** JTextField member gets instantiated through Swixml (look for id="tf" in xml descriptor) */
+  public JTextField tf;
+
+  /** Jlabel to display number of button clicks */
+  public JLabel cnt;
+  
+  
+
+  /** Action appends a '#' to the textfields content.  */
+  public Action submit = new AbstractAction() {
+    @Override
+    public void actionPerformed( ActionEvent e ) {
+      tf.setText( tf.getText() + '#' );
+      cnt.setText(String.valueOf( ++clicks ));
+    }
+  };
 
 private final LayoutController controller = new LayoutController();
   /** Renders UI at construction
      * @throws java.lang.Exception */
-  public mainLayout() throws Exception { 
+  public LayoutMain() throws Exception { 
      
      
      this.getTaglib().registerTag("xpanel", XPanel.class);
      
      Document doc =  controller.getGUI();
-     render(doc).setVisible( true );
-
-     
+     Container a = render(doc);
+     a.setVisible( true );
   }
 
   public static void main(String[] args) throws Exception{
-      new mainLayout();
-      
+      new LayoutMain();     
   }
     
 
