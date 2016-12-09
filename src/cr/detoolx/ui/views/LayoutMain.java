@@ -21,9 +21,9 @@ import org.w3c.dom.Document;
  * @author thanhvinh.phan
  */
 
-public class LayoutMain extends SwingEngine {
+public class LayoutMain extends SwingEngine{
  
-  private int clicks;
+  public int clicks;
     
   /** JTextField member gets instantiated through Swixml (look for id="tf" in xml descriptor) */
   public JTextField tf;

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xpanel background="red" xml="menu_1">
+        <label labelfor="tf" font="Georgia-BOLD-12" foreground="blue" text="Hello World!"/>
+        <textfield id="tf" columns="20" Text="Swixml"/>
+        <button text="Click Here" action="submit"/>
+</xpanel>

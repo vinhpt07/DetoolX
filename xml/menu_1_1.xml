@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<panel background="red" >
+        <label font="Georgia-BOLD-12" foreground="blue" text="Hello World!"/>
+        <textfield  columns="20" Text="Swixml"/>
+        <button text="Click Here" action="submit"/>
+</panel>
