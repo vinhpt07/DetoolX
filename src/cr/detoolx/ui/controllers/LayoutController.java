@@ -40,4 +40,11 @@ public class LayoutController {
     
     }
     
+//    public void getList(){
+//
+//            ListModel lm = new ListModel();
+//            lm.behaviorList();
+//
+//    }
+    
 }

@@ -84,7 +84,7 @@ public class XMLDocumentIterator {
     }
     private static String printXML(Node rootNode, String tab) throws IOException, ParserConfigurationException, SAXException {
         String print = "";
-        if(rootNode.getNodeType()==Node.ELEMENT_NODE) {
+        if(rootNode.getNodeType()==Node.ELEMENT_NODE && !"root".equals(rootNode.getNodeName())) {
             print += " "+tab+"<"+rootNode.getNodeName() + getAttributesAsString(rootNode.getAttributes()) + ">";
         }
         NodeList nl = rootNode.getChildNodes();
@@ -111,7 +111,7 @@ public class XMLDocumentIterator {
             }
             skipNL = true;
         }
-        if(rootNode.getNodeType()==Node.ELEMENT_NODE) {
+        if(rootNode.getNodeType()==Node.ELEMENT_NODE && !"root".equals(rootNode.getNodeName())) {
             if(!skipNL) {
                 print += "\n"+tab;
             }
@@ -137,6 +137,7 @@ public class XMLDocumentIterator {
             }      
         return null;     
     }
+    //for testing
     public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException{
         XMLDocumentIterator xml = new XMLDocumentIterator("mainLayout", "xml");
         String mergeXML = xml.mergeXML();

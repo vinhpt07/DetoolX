@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<xpanel background="red"    >
+
+<root>
         <label labelfor="tf" font="Georgia-BOLD-12" foreground="blue" text="Hello World!"/>
         <textfield id="tf" columns="20" Text="Swixml"/>
         <button text="Click Here" action="submit"/>
-</xpanel>
+
+</root>

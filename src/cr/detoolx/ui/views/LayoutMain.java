@@ -14,6 +14,8 @@ import javax.swing.Action;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import cr.detoolx.ui.controllers.*;
+import javax.swing.JList;
+import javax.swing.UIManager;
 import org.swixml.SwingEngine;
 import org.w3c.dom.Document;
 /**
@@ -27,9 +29,10 @@ public class LayoutMain extends SwingEngine{
     
   /** JTextField member gets instantiated through Swixml (look for id="tf" in xml descriptor) */
   public JTextField tf;
-
+  public JTextField tf1;
   /** Jlabel to display number of button clicks */
   public JLabel cnt;
+  private JList mList;
   
   
 
@@ -38,6 +41,7 @@ public class LayoutMain extends SwingEngine{
     @Override
     public void actionPerformed( ActionEvent e ) {
       tf.setText( tf.getText() + '#' );
+      tf1.setText( tf1.getText() + '#' );
       cnt.setText(String.valueOf( ++clicks ));
     }
   };
@@ -51,11 +55,24 @@ private final LayoutController controller = new LayoutController();
      this.getTaglib().registerTag("xpanel", XPanel.class);
      
      Document doc =  controller.getGUI();
+     
+     //controller.getList();
      Container a = render(doc);
+     changeFont(a,3);
      a.setVisible( true );
   }
-
+    public static void changeFont(Component component, int fontSize) {
+       Font f = component.getFont();
+       component.setFont(new Font(f.getName(),f.getStyle(),f.getSize() + fontSize));
+       if (component instanceof Container) {
+           for (Component child : ((Container) component).getComponents()) {
+               changeFont(child, fontSize);
+           }
+       }
+   }
+   
   public static void main(String[] args) throws Exception{
+
       new LayoutMain();     
   }
     

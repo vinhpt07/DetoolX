@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<root>
+    <panel  size="400,400" text="2" border="EmptyBorder(100,10,10,10)" constraints="BorderLayout.NORTH"/>
+    <tabbedpane>
+        <panel text="1" border="EmptyBorder(100,10,10,10)" constraints="BorderLayout.CENTER">
+            <layout type="FormLayout" columns="right:min(50dlu;pref), 3dlu, fill:max(100dlu;pref), 3dlu, 100dlu" 
+                    rows="  p, 
+                            3dlu, 
+                            p, 
+                            3dlu, 
+                            p, 
+                            3dlu, 
+                            p, 
+                            3dlu, 
+                            p, 
+                            3dlu, 
+                            p,
+                            3dlu, 
+                            p, 
+                            3dlu, 
+                            p, 
+                            3dlu, 
+                            p, 
+                            3dlu, 
+                            p, 
+                            3dlu, 
+                            p, 
+                            3dlu, 
+                            p, 
+                            3dlu, 
+                            p, 
+                            3dlu, 
+                            p                                                      
+                            " columnGroups=""/>
+            <titledseparator constraints="1,1,5,1" text="Version 1.0"/>
+            <label constraints="1,3" text="SINGIN DATE"/>
+            <textfield constraints="3,3"/>
+            <label constraints="1,5" text="PRENOM"/>
+            <textfield constraints="3,5"/>   
+                        <label constraints="1,7" text="NOM"/>
+            <textfield constraints="3,7"/>
+                        <label constraints="1,9" text="NOGENDERM"/>
+            <textfield constraints="3,9"/> 
+                        <label constraints="1,11" text="DOB"/>
+            <textfield constraints="3,11"/>
+                        <label constraints="1,13" text="EMAIL"/>
+            <textfield constraints="3,13"/>
+                        <label constraints="1,15" text="DOMAIN"/>
+            <textfield constraints="3,15"/>
+                        <label constraints="1,17" text="LANGUAGE"/>
+            <textfield constraints="3,17"/>
+                        <label constraints="1,19" text="No"/>
+            <textfield constraints="3,19"/>
+                        <label constraints="1,21" text="OPT"/>
+            <textfield constraints="3,21"/>
+            <list selectionmode="ListSelectionModel.SINGLE_SELECTION" initclass="cr.detoolx.ui.models.ListModel" constraints="5,2,1,21"/>
+                        <label constraints="3,23,2,1" font="Georgia-BOLD-36" text="Clicks11:"/>
+            <label constraints="3,25,2,1" font="Georgia-BOLD-36" id="cnt" text="form"/>
+        </panel>
+        <panel text="2"/>
+    </tabbedpane>
+</root>
