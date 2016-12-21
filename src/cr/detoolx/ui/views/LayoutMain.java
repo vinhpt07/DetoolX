@@ -14,6 +14,8 @@ import javax.swing.Action;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import cr.detoolx.ui.controllers.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JList;
 import javax.swing.UIManager;
 import org.swixml.SwingEngine;
@@ -45,7 +47,16 @@ public class LayoutMain extends SwingEngine{
       cnt.setText(String.valueOf( ++clicks ));
     }
   };
-
+  public Action refresh = new AbstractAction() {
+    @Override
+    public void actionPerformed( ActionEvent e ) {
+        try { 
+            new LayoutMain();
+        } catch (Exception ex) {
+            Logger.getLogger(LayoutMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+  };
 private final LayoutController controller = new LayoutController();
   /** Renders UI at construction
      * @throws java.lang.Exception */
